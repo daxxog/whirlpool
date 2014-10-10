@@ -176,15 +176,41 @@
     return WP;
   };
 
-  // Convert string into byte array
-  var convert = function(source){
-    var i,n,str=source.toString(); source=[];
-    for(i=0; i<str.length; i++) {
-      n = str.charCodeAt(i);
-      if(n>=256) source.push(n>>>8 & 0xFF);
-      source.push(n & 0xFF);
+  // sjcl.bitArray.bitLength
+  var bitLength = function (a) {
+    var l = a.length, x;
+    if (l === 0) { return 0; }
+    x = a[l - 1];
+    return (l-1) * 32 + (Math.round(x/0x10000000000) || 32);
+  };
+
+  // Convert a sjcl.bitArray or a string into utf8 byte array
+  var convert = function(source) {
+    if(Array.isArray(source)) {
+      // modified sjcl.codec.utf8String.fromBits
+      return (function(arr) {
+        var out = [], bl = bitLength(arr), i, tmp;
+        for (i=0; i<bl/8; i++) {
+          if ((i&3) === 0) {
+            tmp = arr[i/4];
+          }
+            out.push(tmp >>> 24);
+            tmp <<= 8;
+        }
+
+        return out;
+      })(source);
+    } else {
+      return (function(source) {
+        var i,n,str=source.toString(); source=[];
+        for(i=0; i<str.length; i++) {
+          n = str.charCodeAt(i);
+          if(n>=256) source.push(n>>>8 & 0xFF);
+          source.push(n & 0xFF);
+        }
+        return source;
+      })(source);
     }
-    return source;
   };
   
   // Delivers input data to the hashing algorithm. Assumes bufferBits < 512
