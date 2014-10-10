@@ -20,6 +20,8 @@
         root.Whirlpool = factory();
   }
 }(this, function() {
+    var Whirlpool;
+    
     /*!! include "com.sunsean.Whirlpool.js" !!*/
 
     return Whirlpool;

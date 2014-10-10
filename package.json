@@ -3,7 +3,7 @@
     "description" : "fork of http://www.sunsean.com/Whirlpool.js for nodejs",
     "homepage"    : "https://github.com/daxxog/whirlpool",
     "main"        : "whirlpool.min.js",
-    "version"     : "0.0.2",
+    "version"     : "0.0.3",
     "engines": { "node" : ">=0.7.0" },
     "maintainers": [{
         "name"  : "David Volm",

@@ -6,5 +6,7 @@
 # http://www.apache.org/licenses/LICENSE-2.0.html  
 #################################################
 
+mv ../.tmp.com.sunsean.Whirlpool.js com.sunsean.Whirlpool.js
 mv ../.tmp.js whirlpool.js
+mv ../.tmp.src.js whirlpool.src.js
 mv ../.tmp.h whirlpool.h

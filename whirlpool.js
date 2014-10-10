@@ -20,6 +20,8 @@
         root.Whirlpool = factory();
   }
 }(this, function() {
+    var Whirlpool;
+    
     /*! Whirlpool Hashing Function v3.0 ~ Sean Catchpole - Copyright 2009 Public Domain */
 /*
   Whirlpool was created by Paulo S.L.M. Barreto and Vincent Rijmen in 2000
