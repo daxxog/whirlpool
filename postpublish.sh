@@ -7,6 +7,7 @@
 #################################################
 
 mv ../.tmp.com.sunsean.Whirlpool.js com.sunsean.Whirlpool.js
+mv ../.tmp.test.js test.js
 mv ../.tmp.js whirlpool.js
 mv ../.tmp.src.js whirlpool.src.js
 mv ../.tmp.h whirlpool.h

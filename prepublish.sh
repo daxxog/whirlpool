@@ -10,6 +10,7 @@ if [ ! -f com-npm-install ]; then
 	node make
 	rm npm-debug.log >> /dev/null
 	mv com.sunsean.Whirlpool.js ../.tmp.com.sunsean.Whirlpool.js
+	mv test.js ../.tmp.test.js
 	mv whirlpool.js ../.tmp.js
 	mv whirlpool.src.js ../.tmp.src.js
 	mv whirlpool.h ../.tmp.h
