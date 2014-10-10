@@ -237,7 +237,7 @@
 
   // Get the hash value from the hashing state. Assumes bufferBits < 512
   WP.finalize = function(){
-    var i,j,h, str="", digest=[], hex="0123456789ABCDEF".split('');
+    var i,j,h, str="", digest=[], hex="0123456789abcdef".split('');
     buffer[bufferPos] |= 0x80 >>> (bufferBits & 7); // append a '1'-bit:
     bufferPos++; // all remaining bits on the current byte are set to zero.
     if(bufferPos > 32) { // pad with zero bits to complete 512N + 256 bits:
